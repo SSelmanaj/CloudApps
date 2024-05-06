@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      working-directory: ./Laborator030424  #Change to your Maven project directory
+      working-directory: .  #Change to your Maven project directory
       run: mvn -B package --file pom.xml
        # Krijimi i imazhit dhe publikimi ne dokerbuh
     - name: Krijo imazh dhe bej push ne dockerhub
