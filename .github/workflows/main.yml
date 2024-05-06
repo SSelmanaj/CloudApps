@@ -15,7 +15,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file 'devops-labs-master/pom.xml'
+        run: mvn -B package --file pom.xml
       - name: Copy JAR to Docker context
         run: cp devops-labs-master/target/*.jar .
       - name: Publish to Docker Hub
