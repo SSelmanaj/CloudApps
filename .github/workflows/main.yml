@@ -17,12 +17,12 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - name: Copy JAR to Docker context
-        run: cp devops-labs-master/target/*.jar .
+        run: cp cloudapps/target/*.jar .
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v1
         with:
           context: .
-          dockerfile: 'devops-labs-master/Dockerfile'
+          dockerfile: '/Dockerfile'
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           repository: sselmanaj/cloud-apps-mpl
